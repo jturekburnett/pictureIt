@@ -14,7 +14,6 @@ public class client {
 				ImageOutputStream out = ImageIO.createImageOutputStream(cSocket.getOutputStream());
 				BufferedReader in = new BufferedReader(new InputStreamReader(cSocket.getInputStream()));)
 						{
-			System.out.println(out.length());
 			String filename = "GC.jpg";
 			ImageIO.write(ImageIO.read(new File(filename)), "jpg", out);
 						}
