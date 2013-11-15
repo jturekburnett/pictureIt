@@ -1,6 +1,5 @@
 import java.io.IOException;
 
-
 public class runCommands {
 	
 	public runCommands(String filename){
@@ -11,12 +10,6 @@ public class runCommands {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
-	
-	public static void main(String[] args) {
-		
-		
 	}
 
 }
