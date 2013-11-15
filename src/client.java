@@ -15,7 +15,7 @@ public class client {
 				BufferedReader in = new BufferedReader(new InputStreamReader(cSocket.getInputStream()));)
 						{
 			System.out.println(out.length());
-			String filename = "GC.jpg";
+			String filename = "leadershipSign.jpg";
 			ImageIO.write(ImageIO.read(new File(filename)), "jpg", out);
 						}
 		catch(Exception e){
