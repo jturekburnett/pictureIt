@@ -1,13 +1,12 @@
-import com.google.gdata.client.*;
-import com.google.gdata.client.calendar.*;
-import com.google.gdata.data.*;
-import com.google.gdata.data.acl.*;
-import com.google.gdata.data.calendar.*;
-import com.google.gdata.data.extensions.*;
-import com.google.gdata.util.*;
+import java.io.IOException;
+import java.net.URL;
 
-import java.net.*;
-import java.io.*;
+import com.google.gdata.client.calendar.CalendarService;
+import com.google.gdata.data.DateTime;
+import com.google.gdata.data.PlainTextConstruct;
+import com.google.gdata.data.calendar.CalendarEventEntry;
+import com.google.gdata.data.extensions.When;
+import com.google.gdata.util.ServiceException;
 
 public class googleConnectRound2 {
 	public static void main(String[] args){

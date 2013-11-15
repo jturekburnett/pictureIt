@@ -1,15 +1,10 @@
-import com.google.gdata.client.*;
-import com.google.gdata.client.calendar.*;
-import com.google.gdata.data.*;
-import com.google.gdata.data.acl.*;
-import com.google.gdata.data.calendar.*;
-import com.google.gdata.data.extensions.*;
-import com.google.gdata.util.*;
+import java.io.IOException;
+import java.net.URL;
 
-import java.net.*;
-import java.io.*;
-
-import sample.util.*;
+import com.google.gdata.client.calendar.CalendarService;
+import com.google.gdata.data.calendar.CalendarEntry;
+import com.google.gdata.data.calendar.CalendarFeed;
+import com.google.gdata.util.ServiceException;
 
 public class CalenderTest {
 	public static void main(String[] args){
