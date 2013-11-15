@@ -58,5 +58,6 @@
 	<classpathentry kind="lib" path="JavaGoogleStuff/gdata/java/lib/gdata-webmastertools-meta-2.0.jar"/>
 	<classpathentry kind="lib" path="JavaGoogleStuff/gdata/java/lib/gdata-youtube-2.0.jar"/>
 	<classpathentry kind="lib" path="JavaGoogleStuff/gdata/java/lib/gdata-youtube-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="JavaGoogleStuff/gdata/guava-15.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
