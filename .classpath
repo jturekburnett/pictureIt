@@ -2,5 +2,18 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/3rdParty/jaf-1.0.2/activation.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/3rdParty/javamail-1.4.7/mail.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/java/lib/gdata-client-1.0.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/java/lib/gdata-client-meta-1.0.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/java/lib/gdata-core-1.0.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/java/lib/gdata-media-1.0.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/java/lib/gdata-calendar-2.0.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/java/lib/gdata-calendar-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/3rdParty/apache-tomcat-6.0.37/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/java/sample/util/lib/sample-util.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/java/lib/gdata-maps-2.0.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/java/lib/gdata-maps-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="H:/CodeCamp/code-camp-jb1/JavaGoogleStuff/gdata/guava-15.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
