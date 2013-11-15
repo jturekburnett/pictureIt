@@ -1,17 +1,10 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 
 public class serverGUI extends JFrame{
 
@@ -37,39 +30,19 @@ public class serverGUI extends JFrame{
 
 
 	private class listener implements ActionListener{
-		Thread t;
-		boolean kill = false;
+		Thread t = new Thread(new Runnable(){
+			public void run(){
+				runServer l = new runServer();
+			}
+		});
+		
 		public void actionPerformed(ActionEvent e){
 			if(e.getSource() == startServer){
 				startServer.setEnabled(false);
 				stopServer.setEnabled(true);
-				
-				//JOptionPane.showMessageDialog(null,"The server has been started!");
-				if(t == null && kill == false){
-
-					t = new Thread(new Runnable(){
-						public void run(){
-							runServer l = new runServer();
-							//	SwingUtilities.invokeLater(new Runnable(){
-							//		public void run(){
-
-							//		}
-							//	});
-
-						}
-					});
-					t.start();
-					//BufferedImage img = s.viewImage();
-					//add(new JLabel(new ImageIcon(img)));
-				}
-				else{
-					t.stop();
-				}
+				t.start();
 			}
 			if(e.getSource() == stopServer){
-				kill = true;
-				e.setSource(startServer);
-				actionPerformed(e);
 				startServer.setEnabled(true);
 				stopServer.setEnabled(false);
 			}
