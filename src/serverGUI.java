@@ -32,7 +32,7 @@ public class serverGUI extends JFrame{
 	private class listener implements ActionListener{
 		Thread t = new Thread(new Runnable(){
 			public void run(){
-				runServer l = new runServer();
+				new runServer();
 			}
 		});
 		

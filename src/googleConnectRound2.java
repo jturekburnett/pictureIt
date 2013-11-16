@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-import java.io.*;
-import java.lang.Object;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-=======
-import java.io.File;
-import java.io.FileNotFoundException;
->>>>>>> 24a7b5648a0f085ee0859497b37fc47c7425e98f
 import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
