@@ -14,13 +14,10 @@ public class client {
 				ImageOutputStream out = ImageIO.createImageOutputStream(cSocket.getOutputStream());
 				BufferedReader in = new BufferedReader(new InputStreamReader(cSocket.getInputStream()));)
 						{
-<<<<<<< HEAD
 			System.out.println(out.length());
-			String filename = "leadershipSign.jpg";
-=======
-			String filename = "GC.jpg";
->>>>>>> fb21f8be3a53977a7374e61fbd5b65e36c2b0988
+			String filename = "religiousFreedomSign.jpg";
 			ImageIO.write(ImageIO.read(new File(filename)), "jpg", out);
+			System.out.println("hello");
 						}
 		catch(Exception e){
 			e.printStackTrace();
