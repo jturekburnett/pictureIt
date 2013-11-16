@@ -60,18 +60,21 @@ public class MainActivity extends Activity {
 			Socket sock = new Socket(InetAddress.getByName("192.168.173.1"),51488);
 			ByteArrayOutputStream bos = new ByteArrayOutputStream();
 			Bitmap bm = BitmapFactory.decodeStream(new FileInputStream(mediaFile));
-			bm.compress(Bitmap.CompressFormat.PNG, 20, bos);
+			bm.compress(Bitmap.CompressFormat.JPEG, 90, bos);
 			byte[] byteArray = bos.toByteArray();
 			OutputStream os = sock.getOutputStream();
 			os.write(byteArray,0,byteArray.length);
 			os.flush();
 			Log.d("Byte","It's Here") ;
+			File toDelete = new File(mediaFile.getAbsolutePath());
+			toDelete.delete();
+			Log.d("Deleted",toDelete.getName() + " " + mediaFile.getAbsolutePath());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
+	
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
 		super.onActivityResult(requestCode, resultCode, data);
