@@ -27,12 +27,11 @@ public class runServer {
 
 				OutputStream out = new FileOutputStream(filename);
 				
-				final byte[] buffer = new byte[1024];
+				final byte[] buffer = new byte[256];
 				int end = -1;
 				int i = 0;
 				while((end = in.read(buffer)) != -1){
 					out.write(buffer,0,end);
-					System.out.println(i);
 					i++;
 				}
 				new runCommands(filename);

@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -28,7 +27,6 @@ public class MainActivity extends Activity {
 	public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	public static final int MEDIA_TYPE_IMAGE = 1;
 	private Uri fileUri;
-	private Socket sock;
 	private static File mediaFile;
 
 	@Override
@@ -43,7 +41,6 @@ public class MainActivity extends Activity {
 	}
 
 	public void run(){
-		Socket();
 		fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
 		Intent cam = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		cam.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
@@ -56,22 +53,11 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	public void Socket(){
-		try {
-			sock = new Socket(InetAddress.getByName("192.168.173.1"),51488);
 
-		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
-	
 	public void sendByte(){
 		try {
+			Socket sock = new Socket(InetAddress.getByName("192.168.173.1"),51488);
 			ByteArrayOutputStream bos = new ByteArrayOutputStream();
 			Bitmap bm = BitmapFactory.decodeStream(new FileInputStream(mediaFile));
 			bm.compress(Bitmap.CompressFormat.PNG, 20, bos);
@@ -92,11 +78,7 @@ public class MainActivity extends Activity {
 		if(requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE){
 			if(resultCode == RESULT_OK){
 				Log.d("Out","Out");
-				new Thread(new Runnable(){
-					public void run(){
-						sendByte();
-					}
-				});
+				sendByte();
 				Toast.makeText(this, "Image saved to:\n" + fileUri.getPath(), Toast.LENGTH_LONG).show();
 				Log.d("Activity Result","Succeeded");
 			}
@@ -109,7 +91,6 @@ public class MainActivity extends Activity {
 				Log.d("Activity Result","Failed");
 			} 
 		}
-
 	}
 
 	private static Uri getOutputMediaFileUri(int type){
