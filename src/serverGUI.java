@@ -50,7 +50,6 @@ public class serverGUI extends JFrame{
 	}
 
 	public static void main(String args[]) throws IOException{
-		//	runServer s = new runServer();
 		new serverGUI();
 	}
 }

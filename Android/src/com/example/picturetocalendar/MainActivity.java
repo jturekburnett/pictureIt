@@ -53,8 +53,6 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-
-
 	public void sendByte(){
 		try {
 			Socket sock = new Socket(InetAddress.getByName("192.168.173.1"),51488);
@@ -65,6 +63,7 @@ public class MainActivity extends Activity {
 			OutputStream os = sock.getOutputStream();
 			os.write(byteArray,0,byteArray.length);
 			os.flush();
+			os.close();
 			Log.d("Byte","It's Here") ;
 			File toDelete = new File(mediaFile.getAbsolutePath());
 			toDelete.delete();

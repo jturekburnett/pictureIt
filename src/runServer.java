@@ -1,4 +1,3 @@
-import java.awt.image.BufferedImage;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -9,7 +8,6 @@ import java.util.Random;
 
 
 public class runServer {
-	private BufferedImage image;
 	boolean args = true;
 	public runServer () {
 		try{
@@ -23,17 +21,20 @@ public class runServer {
 				Random rand = new Random();
 				String filename = "in" + Integer.toHexString(rand.nextInt(0x10000000)) 
 						+ Integer.toHexString(rand.nextInt(0x10000000)) + ".png";
-				
+
 				InputStream in = clientSocket.getInputStream();
 				OutputStream out = new FileOutputStream(filename);
 
-				final byte[] buffer = new byte[512];
-				int end = -1;
+
+				final byte[] buffer = new byte[16384];
+				int end = 0;
+				int i = 0;
 				while((end = in.read(buffer)) != -1){
-					out.write(buffer,0,end);
+					out.write(buffer,0,end);	
 				}
 
 				System.out.println("Transfer Complete");
+				out.close();
 				new runCommands(filename);
 			}
 		}
@@ -42,7 +43,4 @@ public class runServer {
 		}
 	}
 
-	public BufferedImage viewImage(){
-		return image;
-	}
 }
