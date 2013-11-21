@@ -12,7 +12,7 @@ public class runServer {
 	public runServer () {
 		try{
 			ServerSocket serverSocket = new ServerSocket(51488);
-			System.out.println("The server is now running.");
+			System.out.println("The server is now running.\n");
 			while(args){
 				Socket clientSocket = null;
 				if(!args) serverSocket.close();
@@ -26,14 +26,12 @@ public class runServer {
 				OutputStream out = new FileOutputStream(filename);
 
 
-				final byte[] buffer = new byte[16384];
-				int end = 0;
-				int i = 0;
+				final byte[] buffer = new byte[8192];
+				int end = -1;
 				while((end = in.read(buffer)) != -1){
-					out.write(buffer,0,end);	
+					out.write(buffer,0,end);
+					//System.out.println(end);
 				}
-
-				System.out.println("Transfer Complete");
 				out.close();
 				new runCommands(filename);
 			}

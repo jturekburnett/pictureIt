@@ -1,4 +1,8 @@
+import java.io.*;
+import java.lang.Object;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
@@ -20,14 +24,24 @@ import com.google.gdata.util.ServiceException;
  */
 
 public class googleConnectRound2 {
+	public googleConnectRound2(){
+		try {
+			main(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
 	public static void main(String[] args) throws IOException{
 		CalendarService myService = new CalendarService("exampleCo-exampleApp-1.0");
 
-		Scanner input = new Scanner(System.in);
-		System.out.println("Please enter your username.");
-		String un = input.nextLine();
-		System.out.println("Please enter your password");
-		String pwd = input.nextLine();
+//		Scanner input = new Scanner(System.in);
+//		System.out.println("Please enter your username.");
+//		String un = input.nextLine();
+//		System.out.println("Please enter your password");
+//		String pwd = input.nextLine();
 
 		String filename = "results.txt";
 		FileInputStream file = new FileInputStream(filename);
@@ -59,7 +73,7 @@ public class googleConnectRound2 {
 		String end = assemble(details[2], startTimes);
 
 		try {
-			myService.setUserCredentials(un, pwd);
+			myService.setUserCredentials("tesseracttekkies@gmail.com", "partyitup");
 			URL postUrl = new URL ("https://www.google.com/calendar/feeds/tesseracttekkies@gmail.com/private/full");
 
 			CalendarEventEntry myEntry = new CalendarEventEntry();
@@ -98,7 +112,7 @@ public class googleConnectRound2 {
 
 		if(text.indexOf(",")>0){
 			text = text.replace(" ", "");
-			//System.out.println(text);
+			System.out.println(text);
 		}
 		//identifies start year
 		for(int i=2013; i<2015; i++){
@@ -245,6 +259,7 @@ public class googleConnectRound2 {
 		if(text.indexOf(":")>0){
 			String hour = text.substring((text.indexOf(':')-2), text.indexOf(':'));
 			String min = text.substring(text.indexOf(':')+1, text.indexOf(':')+3);
+			hour = hour.replace("\n", "");
 			//if statements cleaning up hour
 			if((Integer.valueOf(hour) > 24)||(text.indexOf("pm")>0 && Integer.valueOf(hour)>12)){
 				hour = hour.substring(1);
@@ -262,6 +277,9 @@ public class googleConnectRound2 {
 			}
 			
 			startTime= hour + ":" + min;
+		}
+		else{
+			startTime = "06:00";
 		}
 		System.out.println(startTime);
 		//if(text.substring(text.indexOf(':')+3).contains("pm")||text.contains("p.m.")|| text.contains("p. m.")||text.contains(PM)|| text.contains(P.M.)|| text.contains(P. M.)){

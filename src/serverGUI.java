@@ -28,7 +28,6 @@ public class serverGUI extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-
 	private class listener implements ActionListener{
 		Thread t = new Thread(new Runnable(){
 			public void run(){

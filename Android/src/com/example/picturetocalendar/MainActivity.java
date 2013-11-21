@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
 			Socket sock = new Socket(InetAddress.getByName("192.168.173.1"),51488);
 			ByteArrayOutputStream bos = new ByteArrayOutputStream();
 			Bitmap bm = BitmapFactory.decodeStream(new FileInputStream(mediaFile));
-			bm.compress(Bitmap.CompressFormat.JPEG, 90, bos);
+			bm.compress(Bitmap.CompressFormat.JPEG, 85, bos);
 			byte[] byteArray = bos.toByteArray();
 			OutputStream os = sock.getOutputStream();
 			os.write(byteArray,0,byteArray.length);
